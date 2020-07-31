@@ -58,6 +58,7 @@ defmodule Coherence.Mixfile do
       {:elixir_uuid, "~> 1.2"},
       {:phoenix_swoosh, "~> 0.2"},
       {:timex, "~> 3.6"},
+      {:timex_ecto, github: "zumatande/timex_ecto"},
       {:floki, "~> 0.19", only: :test},
       {:ex_doc, "~> 0.22", only: :dev},
       {:earmark, "~> 1.2", only: :dev, override: true},
