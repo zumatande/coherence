@@ -121,6 +121,8 @@ defmodule Mix.Tasks.Coh.Install do
   import Mix.Ecto
   import Coherence.Mix.Utils
 
+  alias Ecto.Migrator
+
   @shortdoc "Configure the Coherence Package"
 
   @all_options ~w(authenticatable recoverable lockable trackable trackable_table rememberable) ++
@@ -680,7 +682,7 @@ defmodule Mix.Tasks.Coh.Install do
           path
 
         _ ->
-          Path.relative_to(migrations_path(repo), Mix.Project.app_path())
+          Path.relative_to(Migrator.migrations_path(repo), Mix.Project.app_path())
       end
 
     file = Path.join(path, "#{current_timestamp}_#{underscore(name)}.exs")
